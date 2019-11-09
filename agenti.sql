@@ -74,8 +74,35 @@ ALTER TABLE clienti DROP COLUMN provinca;
 /*elimina tutta la tabella*/
 DELETE FROM clienti;
 
+/*modifica nome colonna*/
+ALTER TABLE clienti CHANGE provinca privincia char(2);
+
 /*elimina spacificando un campo*/
 DELETE FROM agenti WHERE provincia = "BS";
 
 /*cambiare il tipo di dato di una tabella*/
 ALTER TABLE clienti MODIDIFY COLUMN prova varchar(3);
+
+/*mostra la tabella clienti*/
+SELECT * FROM clienti;
+
+/*mostra la tabella clienti dove la provincia è brescia*/
+SELECT * FROM clienti WHERE provincia="BS";
+
+/*mostra la tabella clienti la cui ragione sociale inizia per c*/
+SELECT * FROM clienti WHERE ragioneSociale LIKE "c%";
+
+/*mostra la tabella clienti la cui ragione sociale finisce per c*/
+SELECT * FROM clienti WHERE ragioneSociale LIKE "%c";
+
+/*mostra la tabella clienti la cui ragione sociale contiene la lettera c*/
+SELECT * FROM clienti WHERE ragioneSociale LIKE "%c%";
+
+/*mostra via e civico dove la RS è itis Castelli*/
+SELECT via, n_civico FROM clienti WHERE ragioneSociale ="ITIS Castelli";
+
+/*join tra due tabelle e ricerca l'associazione tra clienti e agenti secondo le zome*/
+SELECT clienti.ragioneSociale AS istituto, agenti.nomeAgente AS bond
+	FROM clienti, agenti
+		WHERE clienti.agenteDiZona = agenti.codiceAgente
+		ORDER BY clienti.ragioneSociale /*DESC decrescente*/
