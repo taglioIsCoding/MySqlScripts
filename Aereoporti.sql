@@ -53,6 +53,6 @@ SELECT * FROM Aereoporto Where NumPiste IS NULL
 
 SELECT IdVolo FROM volo join Aereo where Aereo.NumPasseggeri > 0 and Aereo.QtaMerci > 0
 
-SELECT cittaArrivo, CittaPartenza From volo where IdVolo = 1
+SELECT Aereoporto.Nazione, Aereoporto.Nazione FROM (aereoporto A1 join volo on Aereoporto.citta=volo.cittaArrivo) join Aereoporto on CittaPartenza = Aereoporto.citta
 
-SELECT * from Aereoporto join volo join Aereoporto
+/*SELECT * from Aereoporto join volo join Aereoporto*/
