@@ -35,6 +35,7 @@ create table volo(
 
 
 INSERT INTO `Aereoporto`(`citta`, `Nazione`, `NumPiste`) VALUES ("Milano","Italia", 10);
+INSERT INTO `Aereoporto`(`citta`, `Nazione`, `NumPiste`) VALUES ("Bergamo","Italia", 1);
 INSERT INTO `Aereoporto`(`citta`, `Nazione`, `NumPiste`) VALUES ("Berlino","Germania", 30);
 INSERT INTO `Aereoporto`(`citta`, `Nazione`, `NumPiste`) VALUES ("Madrid","Spagna", 15);
 
@@ -53,6 +54,10 @@ SELECT * FROM Aereoporto Where NumPiste IS NULL
 
 SELECT IdVolo FROM volo join Aereo where Aereo.NumPasseggeri > 0 and Aereo.QtaMerci > 0
 
-SELECT Aereoporto.Nazione, Aereoporto.Nazione FROM (aereoporto A1 join volo on Aereoporto.citta=volo.cittaArrivo) join Aereoporto on CittaPartenza = Aereoporto.citta
+SELECT Aereoporto.Nazione, Aereoporto.Nazione FROM (aereoporto A1 join volo on A1.citta=volo.cittaArrivo) join Aereoporto on CittaPartenza = Aereoporto.citta
 
 /*SELECT * from Aereoporto join volo join Aereoporto*/
+
+SELECT aereoporto.nazione, max(aereoporto.NumPiste) FROM aereoporto where NumPiste is not null group by nazione
+
+SELECT aereoporto.nazione, max(aereoporto.NumPiste) FROM aereoporto where NumPiste > 3 group by nazione
