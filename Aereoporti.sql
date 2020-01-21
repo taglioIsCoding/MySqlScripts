@@ -61,3 +61,6 @@ SELECT Aereoporto.Nazione, Aereoporto.Nazione FROM (aereoporto A1 join volo on A
 SELECT aereoporto.nazione, max(aereoporto.NumPiste) FROM aereoporto where NumPiste is not null group by nazione
 
 SELECT aereoporto.nazione, max(aereoporto.NumPiste) FROM aereoporto where NumPiste > 3 group by nazione
+
+SELECT DISTINCT * from (aereoporto as a1 join volo on a1.citta=Volo.CittaPartenza)join aereoporto as a2 on a2.citta = cittaArrivo where a1.Nazione = "Spagna" and a2.Nazione = "Germania"
+
