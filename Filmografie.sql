@@ -55,7 +55,7 @@ create table CINEMA (
      PRIMARY key (citta, nomecinema, TitoloFilm),
      FOREIGN KEY (citta, nomecinema) REFERENCES cinema(citta, nomeCinema),
      FOREIGN key (titoloFilm) REFERENCES film(titolo)
- )
+ );
 
  INSERT INTO `REGISTI`(`nome`, `DataNascita`, `Nazionalità`) VALUES ("Sorrentino",'19981011',"Italia");
  INSERT INTO `REGISTI`(`nome`, `DataNascita`, `Nazionalità`) VALUES ("Swanky",'19970910',"Russia");
@@ -90,7 +90,10 @@ create table CINEMA (
  INSERT INTO `INTERPRETA`(`ATTORE`, `film`, `Personaggio`) VALUES ("Boldi","IlNomeDiTuoPApa","Papa");
 
  INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Bologna","Wiz","Cinepanettone");
+ INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Trento","Grande","Cinepanettone2");
+ INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Brescia","Oz","Cinepanettone");
  INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Brescia","Oz","FastAndFurious");
+ INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Trento","Grande","FastAndFurious");
  INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Bologna","Wiz","PulciniScatenati");
  INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Bologna","Wiz","IoEte");
  INSERT INTO `proiezioni`(`citta`, `nomeCinema`, `titoloFilm`) VALUES ("Trento","Grande","IoEte");
@@ -98,4 +101,15 @@ create table CINEMA (
 
 
 /*Query*/
-SELECT DISTINCT Nazionalità FROM `registi` join film on registi.Nome = film.NomeRegista where film.anno = 2020 and film.anno<>2019
+SELECT DISTINCT Nazionalità
+          FROM `registi` join film on registi.Nome = film.NomeRegista
+           where film.anno = 2020 and film.anno<>2019
+
+SELECT nome,DataNascita
+          FROM (REGISTI join FILM on REGISTI.nome=film.NomeRegista) join proiezioni on film.titolo = proiezioni.titoloFilm
+          where citta="Brescia"
+          and nome in (SELECT nome FROM (REGISTI join FILM on REGISTI.nome=film.NomeRegista) join proiezioni on film.titolo = proiezioni.titoloFilm
+          where citta="Trento")
+
+SELECT *
+        FROM cinema join proiezioni on cinema.citta = proiezioni.citta and cinema.nomeCinema = proiezioni.nomeCinema
