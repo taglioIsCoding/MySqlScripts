@@ -28,8 +28,8 @@ sviluppare il database.
 ![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/Edicole/E_R.PNG)
 
 #### Logic Model
-Pubblicazioni(**idPubb**, titolo, nomeEditore, _tipo_).
-tipoPubblicazione(**idTipo**, nomeTipo, periodicitaConsegna, descrizione).
-Edicole(**idEdicola**, nomeEdicola, _codProvincia_).
-Province(**idProv**, nomeProvincia).
+Pubblicazioni(**idPubb**, titolo, nomeEditore, _tipo_)  <br/>
+tipoPubblicazione(**idTipo**, nomeTipo, periodicitaConsegna, descrizione) <br/>
+Edicole(**idEdicola**, nomeEdicola, _codProvincia_)  <br/>
+Province(**idProv**, nomeProvincia)  <br/>
 Spedizione(_**idPubb**_, _**idEdicola**_, numConsegnati, numResi, **dataOperazione**).
