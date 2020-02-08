@@ -25,11 +25,11 @@ Di seguito riporto il modello logico e il modello E/R che utilizzero per
 sviluppare il database.
 
 #### E/R Model
-![E/R](./E_R.png)
+![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/Edicole/E_R.PNG)
 
 #### Logic Model
-Pubblicazioni(**idPubb**, titolo, nomeEditore, _tipo_)
-tipoPubblicazione(**idTipo**, nomeTipo, periodicitaConsegna, descrizione)
-Edicole(**idEdicola**, nomeEdicola, _codProvincia_)
-Province(**idProv**, nomeProvincia)
-Spedizione(_**idPubb**_, _**idEdicola**_, numConsegnati, numResi, **dataOperazione**)
+Pubblicazioni(**idPubb**, titolo, nomeEditore, _tipo_).
+tipoPubblicazione(**idTipo**, nomeTipo, periodicitaConsegna, descrizione).
+Edicole(**idEdicola**, nomeEdicola, _codProvincia_).
+Province(**idProv**, nomeProvincia).
+Spedizione(_**idPubb**_, _**idEdicola**_, numConsegnati, numResi, **dataOperazione**).
