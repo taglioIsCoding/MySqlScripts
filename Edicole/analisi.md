@@ -1,4 +1,4 @@
-#Analisi es.Bottari
+# Analisi es Bottari
 ### Agenzia di Pubblicazioni
 
 Il problema presentato si rifersce a un'agenzia di pubblicaszioni.
@@ -24,10 +24,10 @@ effettuate una sola volta al giorno.
 Di seguito riporto il modello logico e il modello E/R che utilizzero per
 sviluppare il database.
 
-####E/R Model
-![E/R](./IE_R.png)
+#### E/R Model
+![E/R](./E_R.png)
 
-####Logic Model
+#### Logic Model
 Pubblicazioni(**idPubb**, titolo, nomeEditore, _tipo_)
 tipoPubblicazione(**idTipo**, nomeTipo, periodicitaConsegna, descrizione)
 Edicole(**idEdicola**, nomeEdicola, _codProvincia_)
