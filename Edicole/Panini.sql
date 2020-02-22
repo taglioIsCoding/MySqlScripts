@@ -76,7 +76,29 @@ INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataO
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (3,1,2,15, 20200202);
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (1,2,2,1, 20200201);
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (2,2,52,20, 20200201);
+INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (2,2,52,20, 20200202);
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (3,2,24,7, 20200202);
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (1,3,10,10, 20200201);
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (2,3,5,10, 20200201);
 INSERT INTO `Spedizione`(`idPubb`, `idEdicola`, `numConsegnati`,`numResi`,`dataOperazione`) VALUES (3,3,12,1, 20200202);
+
+/*query*/
+Select *
+  from ((Province as t1 join Edicole)
+    join Spedizione as t2)
+    join Pubblicazioni
+     where Pubblicazioni.idPubb=t2.idPubb
+      and t2.idEdicola = Edicole.idEdicola
+      and t1.idProv = Edicole.codProvincia
+      and t1.idProv = 2
+      and Pubblicazioni.titolo = "Focus"
+      and MONTH(t2.dataOperazione) = 2
+
+      Select DISTINCT  DAY(dataOperazione), sum(numResi)
+        from Spedizione join Pubblicazioni
+          where Pubblicazioni.idPubb=Spedizione.idPubb
+            and MONTH(Spedizione.dataOperazione) = 2
+            and Pubblicazioni.titolo = "ilSole24"
+            group by Spedizione.dataOperazione
+
+/*sum(numConsegnati)*/
