@@ -20,12 +20,12 @@
 
 #### ERD
 
-  ![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/Supermarket/ERD.PNG)
+  ![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/supermarket/ERD.png)
 
 ### Logic model
 
-Supermercati(*IdSuper*, NumCivico, Citta, Via);
-Prodotti(*IdProdotto*, Nome, Prezzo, _IdCategoria_);
-Possedere(*_IdProdotto_*, *_IdSuper_*, NumConfM, NumConfE, ;
+Supermercati(*IdSuper*, NumCivico, Citta, Via) <br/>
+Prodotti(*IdProdotto*, Nome, Prezzo, _IdCategoria_) <br/>
+Possedere(*_IdProdotto_*, *_IdSuper_*, NumConfM, NumConfE) <br/>
 Categorie(*IdCategoria*, Descrizione);
 
