@@ -17,7 +17,7 @@ In seguito all'analisi abbiamo creato il modello ER e il modello logico.
 
 ## ERD
 
-![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/school/ER.png)
+![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/School/ER.png)
 
 
 ## Logic Model
