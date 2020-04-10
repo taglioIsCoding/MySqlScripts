@@ -8,6 +8,7 @@ Per questo database ho cercato di lavorare in terza forma normale. </br>
 
 ### E/R Model
 
+![E/R](https://github.com/taglioIsCoding/MySqlScripts/blob/master/Art/ER.png)
 
 ### Logic model
 
