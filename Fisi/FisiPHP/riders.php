@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
   <title>Fisi riders</title>
 </head>
 <body>
@@ -48,10 +49,12 @@
     }
     echo "</table>";
     $conn -> close();
-
+    $result -> free();
     echo "</div>";
   ?>
   <a href="index.php">Back to home page</a>
+  <br>
+  <a href="insertRiderForm.php">Add a new rider</a>
 </body>
 </html>
 

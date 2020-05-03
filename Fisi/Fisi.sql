@@ -2,14 +2,14 @@ CREATE DATABASE Fisi;
 
 CREATE TABLE Nazionale
 (
-  ID_Nazione INT,
+  ID_Nazione INT AUTO_INCREMENT,
   Nazione VARCHAR(30),
   PRIMARY KEY (ID_Nazione)
 );
 
 CREATE TABLE Gara
 (
-  ID_Gara INT,
+  ID_Gara INT AUTO_INCREMENT,
   DataGara DATE,
   Nome VARCHAR(30),
   PrimoPremio INT,
@@ -23,7 +23,7 @@ CREATE TABLE Gara
 
 CREATE TABLE Trick
 (
-  ID_Trick INT,
+  ID_Trick INT AUTO_INCREMENT,
   Nome VARCHAR(30),
   Rotazione CHAR(2),
   PRIMARY KEY (ID_Trick)
@@ -31,7 +31,7 @@ CREATE TABLE Trick
 
 CREATE TABLE Rider
 (
-  ID_Rider INT,
+  ID_Rider INT AUTO_INCREMENT,
   Nome VARCHAR(20),
   Cognome VARCHAR(20),
   Sesso BOOLEAN,
@@ -76,7 +76,7 @@ INSERT INTO Nazionale(ID_Nazione, Nazione) VALUES (5, "Norvegia");
 INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (1, 20200113, "BigAir", 10000, "Modena", "44.6568" ,"10.9202" ,1); 
 INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (2, 20200215, "Canada Champ", 13400, "Montreal", "45.5088" ,"-73.561" ,3); 
 INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (3, 20200316, "Belgium Open", 3455, "Bruxelles", "50.8504" ,"4.34878" ,4); 
-INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (4, 20200420, "US Open", 22000, "Aspen", "39.1910" ,"-106.817" ,2); 
+INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (4, 20200420, "US Open", 22000, "Aspen", "39.1910" ,"-106.8" ,2); 
 INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (5, 20200512, "X games", 3500, "Oslo", "59.9127" ,"10.7460" ,5); 
 INSERT INTO Gara(ID_Gara, DataGara, Nome, PrimoPremio, Citta, Latitudine, Longitudine, ID_Nazione) VALUES (6, 20200610, "BigAir2", 10000, "Palo Alto", "37.4683" ,"-122.14" ,2); 
 
