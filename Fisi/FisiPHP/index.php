@@ -10,7 +10,10 @@
 <body>
   <div align="center">
     <h1>Welcome in the fisi page</h1>
-    <a href="riders.php">riders list</a>
+    <a href="riders.php">Riders list</a>
+    <br>
+    <a href="contest.php">Contest List</a>
   </div>
 </body>
 </html>
+

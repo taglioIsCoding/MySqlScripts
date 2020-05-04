@@ -52,9 +52,11 @@
     $result -> free();
     echo "</div>";
   ?>
-  <a href="index.php">Back to home page</a>
+  <a href="index.php">Home page</a>
   <br>
-  <a href="insertRiderForm.php">Add a new rider</a>
+  <a href="insertRiderForm.php">Aggiungi un nuovo rider</a>
+  <br>
+  <a href="deleteRiderForm.php">Elimina un rider</a>
 </body>
 </html>
 

@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
-    <title>Insert a new rider</title>
+    <title>Inserimento nuovo Rider</title>
 </head>
 <body>
     <div align="center">
         <h1>Form di inserimento per un nuovo rider</h1>
         <form action="insertRiderAction.php" method="GET"><br>
-        Inserire il nome:
-        <input type="text" name="NomeRider" required><br>
-        Inserire il cognome:
-        <input type="text" name="CognomeRider" required><br>
+        <input type="text" name="NomeRider" placeholder="nome" required><br>
+        <input type="text" name="CognomeRider" placeholder="cognome" required><br>
         Sesso:
         <select name="Sesso">
             <option value="1">Uomo</option>
@@ -26,7 +24,8 @@
             <option value="Goofy">Goofy</option>
         </select> <br>
         Date of birth:
-        <input type="date" id="birthday" name="birthday" required>
+        <input type="text" id="birthday" name="birthday" placeholder="yyyymmdd" required>
+        <br>
         
         <?php
             $user = 'root';
@@ -64,7 +63,7 @@
         <input type="submit" value= "Inserisci">
       </form>
     </div>
-    <a href="index.php">Back to home page</a>
+    <a href="index.php">Home page</a>
     <br>
 </body>
 </html>
