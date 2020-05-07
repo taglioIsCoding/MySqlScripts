@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
     <link rel="stylesheet" href="style.css">
-    <title>Big air Modena</title>
+    <title>X Games Oslo</title>
 </head>
 <body>
     <div align = "center">
-        <h1>Big Air Modena</h1>
+        <h1>X Games Oslo</h1>
         <?php
             $user = 'root';
             $password = 'root';
@@ -30,11 +30,11 @@
 
 
             // Perform query 
-            if ($result = $conn -> query("SELECT * FROM Gara WHERE Citta = 'Modena'")) {
+            if ($result = $conn -> query("SELECT * FROM Gara WHERE Citta = 'Oslo'")) {
             echo "Returned rows are: " . $result -> num_rows;
             }
 
-            $query = "SELECT * FROM Gara WHERE Citta = 'Modena'";
+            $query = "SELECT * FROM Gara WHERE Citta = 'Oslo'";
             $result = $conn->query($query);
             $row = $result->fetch_array(MYSQLI_NUM);
 
